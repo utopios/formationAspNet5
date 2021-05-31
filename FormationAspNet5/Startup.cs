@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using FormationAspNet5.Tools;
@@ -44,7 +45,9 @@ namespace FormationAspNet5
             //    await next.Invoke();
             //});
 
-            app.UseOurCookie();
+            //app.UseOurCookie();
+
+            app.UseLogger(Path.Combine(env.WebRootPath, "log", "log.txt"));
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

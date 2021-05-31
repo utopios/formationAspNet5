@@ -24,5 +24,8 @@ namespace FormationAspNet5.Tools
 
 
         public static bool isLetter(char c) => (c is (>= 'a' and <= 'z'));
+
+
+
     }
 }
