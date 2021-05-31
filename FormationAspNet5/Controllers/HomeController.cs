@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FormationAspNet5.Models;
+using FormationAspNet5.Tools;
 
 namespace FormationAspNet5.Controllers
 {
@@ -33,5 +34,13 @@ namespace FormationAspNet5.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+        public IActionResult GetPeron([FromBody] PersonRecord p)
+        {
+            return Ok();
+        }
     }
+
+    
 }
