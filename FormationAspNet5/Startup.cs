@@ -31,7 +31,10 @@ namespace FormationAspNet5
             services.AddControllersWithViews();
             //Ajouter les services
             //Transient
-            services.AddTransient<ITestService, UniqueId2Service>();
+            services.AddTransient<ITestTransientService, UniqueId2Service>();
+            services.AddTransient<SecondService>();
+            services.AddSingleton<ITestSignletonService, UniqueId2Service>();
+            services.AddScoped<ITestScopedService, UniqueId2Service>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
