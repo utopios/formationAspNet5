@@ -48,6 +48,9 @@ namespace FormationAspNet5
             //app.UseOurCookie();
 
             app.UseLogger(Path.Combine(env.WebRootPath, "log", "log.txt"));
+
+           
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
