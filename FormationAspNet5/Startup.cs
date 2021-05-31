@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using FormationAspNet5.Interfaces;
+using FormationAspNet5.Services;
 using FormationAspNet5.Tools;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +29,9 @@ namespace FormationAspNet5
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //Ajouter les services
+            //Transient
+            services.AddTransient<ITestService, UniqueId2Service>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

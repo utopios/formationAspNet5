@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FormationAspNet5.Models;
 using FormationAspNet5.Tools;
+using FormationAspNet5.Interfaces;
 
 namespace FormationAspNet5.Controllers
 {
@@ -14,13 +15,17 @@ namespace FormationAspNet5.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private ITestService _uniqueIdService;
+
+        public HomeController(ILogger<HomeController> logger, ITestService uniqueService)
         {
             _logger = logger;
+            _uniqueIdService = uniqueService;
         }
 
         public IActionResult Index()
         {
+            ViewBag.uniqueTransientId = _uniqueIdService.UniqueId();
             return View();
         }
 

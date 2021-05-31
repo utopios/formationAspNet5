@@ -7,5 +7,7 @@
   <ItemGroup>
     <Folder Include="Tools\" />
     <Folder Include="wwwroot\log\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

@@ -21,23 +21,14 @@ namespace FormationAspNet5.Tools
 
         public static void UseLogger(this IApplicationBuilder app, string path)
         {
-<<<<<<< HEAD
+
             app.Use(async (context, next) =>
             {
                 StreamWriter writer = new StreamWriter(path);
                 writer.WriteLine($"URL : {context.Request.QueryString}, Verb : {context.Request.Method}");
                 writer.Close();
                 await next.Invoke();
-            });
-=======
-            //app.Use(async (context, next) =>
-            //{
-            //    StreamWriter writer = new StreamWriter(path);
-            //    writer.WriteLine($"URL : ${context.Request.QueryString}, Verb : ${context.Request.Method}");
-            //    writer.Close();
-            //    await next.Invoke();
-            //});
->>>>>>> bff7e11a6b7300a7aab7a80e75455761e13254d2
+            }); 
         }
     }
 }
