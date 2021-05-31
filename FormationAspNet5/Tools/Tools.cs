@@ -9,7 +9,7 @@ namespace FormationAspNet5.Tools
         public Tools()
         {
             Person p = new Person { FirstName = "ihab", LastName = "abadi" };
-
+            //p.FirstName = "toto";
             var (firstName, _,address) = p;
 
             Debug.WriteLine(firstName);
@@ -21,5 +21,8 @@ namespace FormationAspNet5.Tools
         {
             return (10, true);
         }
+
+
+        public static bool isLetter(char c) => (c is (>= 'a' and <= 'z'));
     }
 }

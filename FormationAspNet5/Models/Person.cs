@@ -11,9 +11,9 @@ namespace FormationAspNet5.Models
         {
         }
 
-        public string FirstName { get => firstName; set => firstName = value; }
-        public string LastName { get => lastName; set => lastName = value; }
-        public string Address { get => address; set => address = value; }
+        public string FirstName { get => firstName; init => firstName = value; }
+        public string LastName { get => lastName; init => lastName = value; }
+        public string Address { get => address; init => address = value; }
 
         public void Deconstruct(out string firstName, out string lastName, out string address)
         {
