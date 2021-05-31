@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using FormationAspNet5.Interfaces;
+using FormationAspNet5.Models;
+using FormationAspNet5.Repositories;
+using FormationAspNet5.Services;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FormationAspNet5.Tools
 {
@@ -29,6 +34,22 @@ namespace FormationAspNet5.Tools
                 writer.Close();
                 await next.Invoke();
             }); 
+        }
+
+
+        public static void AddOurServices(this IServiceCollection services)
+        {
+            services.AddTransient<ITestTransientService, UniqueId2Service>();
+            services.AddTransient<SecondService>();
+            services.AddSingleton<ITestSignletonService, UniqueId2Service>();
+            services.AddScoped<ITestScopedService, UniqueId2Service>();
+            services.AddScoped<IHash, HashService>();
+        }
+
+
+        public static void AddRepositoriesServices(this IServiceCollection services)
+        {
+            services.AddScoped<IRepository<Person>, PersonRepository>();
         }
     }
 }

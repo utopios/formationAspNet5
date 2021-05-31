@@ -21,13 +21,16 @@ namespace FormationAspNet5.Controllers
         private ITestSignletonService _uniqueIdServiceSingleton;
         private SecondService _secondService;
 
-        public HomeController(ILogger<HomeController> logger, ITestTransientService uniqueServiceTransient, ITestSignletonService uniqueIdServiceSingleton, ITestScopedService uniqueIdServiceScoped, SecondService secondService)
+        private IHash _hashService;
+
+        public HomeController(ILogger<HomeController> logger, ITestTransientService uniqueServiceTransient, ITestSignletonService uniqueIdServiceSingleton, ITestScopedService uniqueIdServiceScoped, SecondService secondService, IHash hashService)
         {
             _logger = logger;
             _uniqueIdServiceTransient = uniqueServiceTransient;
             _uniqueIdServiceSingleton = uniqueIdServiceSingleton;
             _uniqueIdServiceScoped = uniqueIdServiceScoped;
             _secondService = secondService;
+            _hashService = hashService;
         }
 
         public IActionResult Index()
@@ -41,6 +44,9 @@ namespace FormationAspNet5.Controllers
 
         public IActionResult Privacy()
         {
+            string password = "toto";
+            ViewBag.Hash = _hashService.HashPassword(password);
+            ViewBag.HashOk = _hashService.CheckHash("OzbRui1fau5u+NOWLtrqVAs+5l+I8NV9usi2vE4r9ng=", password);
             return View();
         }
 

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using FormationAspNet5.Interfaces;
+using FormationAspNet5.Models;
 using FormationAspNet5.Services;
 using FormationAspNet5.Tools;
 using Microsoft.AspNetCore.Builder;
@@ -31,10 +32,13 @@ namespace FormationAspNet5
             services.AddControllersWithViews();
             //Ajouter les services
             //Transient
-            services.AddTransient<ITestTransientService, UniqueId2Service>();
-            services.AddTransient<SecondService>();
-            services.AddSingleton<ITestSignletonService, UniqueId2Service>();
-            services.AddScoped<ITestScopedService, UniqueId2Service>();
+            //services.AddTransient<ITestTransientService, UniqueId2Service>();
+            //services.AddTransient<SecondService>();
+            //services.AddSingleton<ITestSignletonService, UniqueId2Service>();
+            //services.AddScoped<ITestScopedService, UniqueId2Service>();
+            //services.AddScoped<IHash, HashService>();
+            services.AddOurServices();
+            services.AddDbContext<DataContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
