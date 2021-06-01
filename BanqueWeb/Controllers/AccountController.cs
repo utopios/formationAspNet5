@@ -20,7 +20,7 @@ namespace BanqueWeb.Controllers
         public IActionResult Index(string message)
         {
             ViewBag.Message = message;
-            return View();
+            return View(_accountRepository.FindAll());
         }
 
         public IActionResult FormAccount()

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BanqueRepositoryClass.Interface;
 using BanqueRepositoryClass.Models;
 using BanqueRepositoryClass.Tools;
+using Microsoft.EntityFrameworkCore;
 
 namespace BanqueRepositoryClass.Repositorties
 {
@@ -27,7 +29,7 @@ namespace BanqueRepositoryClass.Repositorties
 
         public List<Account> FindAll()
         {
-            throw new NotImplementedException();
+            return _dataContext.Accounts.Include(e => e.Customers).Include(e => e.Operations).ToList();
         }
     }
 }
