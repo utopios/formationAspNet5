@@ -1,12 +1,14 @@
 ﻿@page "/personne"
 
 <div>
-    <div>
+    @*<div>
 
         <input type="text" @bind="LastName" class="form-control" placeholder="Votre nom" />
         <input type="text" @bind="FirstName" class="form-control" placeholder="Votre prenom" />
     </div>
-    <button class="btn btn-primary" @onclick="@ClickPerson">Ajouter une personne</button>
+    <button class="btn btn-primary" @onclick="@ClickPerson">Ajouter une personne</button>*@
+
+    <FormPerson GetPerson="GetPerson"></FormPerson>
     @*@foreach (Person d in Persons)
     {
         <div>@d.FirstName</div>
@@ -21,19 +23,17 @@
 
 @code {
 
-    // public string TestPerson { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    
+    
 
     public string PersonToEdit { get; set; }
     public List<Person> Persons { get; set; } = new List<Person>();
 
-    public void ClickPerson()
+    public void GetPerson(Person p)
     {
         //TestPerson = "toto";
-        Persons.Add(new Person { FirstName = FirstName, LastName = LastName });
-        FirstName = "";
-        LastName = "";
+        Persons.Add(p);
+        
     }
 
     public void GetPersonToEdit(string p)

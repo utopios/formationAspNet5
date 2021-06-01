@@ -1,0 +1,20 @@
+﻿<div>
+
+    <input type="text" @bind="LastName" class="form-control" placeholder="Votre nom" />
+    <input type="text" @bind="FirstName" class="form-control" placeholder="Votre prenom" />
+</div>
+<button class="btn btn-primary" @onclick="@ClickPerson">Ajouter une personne</button>
+@code {
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+
+    [Parameter]
+    public EventCallback<Person> GetPerson { get; set; }
+
+    public void ClickPerson()
+    {
+        GetPerson.InvokeAsync(new Person() { FirstName = FirstName, LastName = LastName });
+        FirstName = "";
+        LastName = "";
+    }
+}
