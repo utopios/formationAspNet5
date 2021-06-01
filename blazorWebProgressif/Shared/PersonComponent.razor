@@ -2,21 +2,33 @@
 
 <div>
     <div>
+
         <input type="text" @bind="LastName" class="form-control" placeholder="Votre nom" />
         <input type="text" @bind="FirstName" class="form-control" placeholder="Votre prenom" />
     </div>
     <button class="btn btn-primary" @onclick="@ClickPerson">Ajouter une personne</button>
-    <span>@TestPerson</span>
-    <div>@FirstName @LastName</div>
+    @foreach (dynamic d in Persons)
+    {
+        <div>@d.FirstName</div>
+        <div>@d.LastName</div>
+    }
+
+    @*<span>@TestPerson</span>
+    <div>@FirstName @LastName</div>*@
 </div>
 
 @code {
 
-    public string TestPerson { get; set; }
+    // public string TestPerson { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public List<Person> Persons { get; set; } = new List<Person>();
+
     public void ClickPerson()
     {
-        TestPerson = "toto";
+        //TestPerson = "toto";
+        Persons.Add(new Person { FirstName = FirstName, LastName = LastName });
+        FirstName = "";
+        LastName = "";
     }
 }
