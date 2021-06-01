@@ -13,5 +13,7 @@ namespace FormationAspNet5.Interfaces
         T FindById(int id);
 
         IEnumerable<T> Search(Func<T, bool> delegateSearch);
+
+
     }
 }

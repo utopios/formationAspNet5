@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.809.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormationAspNet5", "FormationAspNet5\FormationAspNet5.csproj", "{B3850688-D03C-495E-931A-C6DC76D4855C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueWeb", "BanqueWeb\BanqueWeb.csproj", "{66799AD0-ADE6-4745-84B6-54FF3DC7003B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueRepositoryClass", "BanqueRepositoryClass\BanqueRepositoryClass.csproj", "{3F3D0828-1E7E-430D-9D35-6910C82EA15C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B3850688-D03C-495E-931A-C6DC76D4855C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3850688-D03C-495E-931A-C6DC76D4855C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3850688-D03C-495E-931A-C6DC76D4855C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66799AD0-ADE6-4745-84B6-54FF3DC7003B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66799AD0-ADE6-4745-84B6-54FF3DC7003B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66799AD0-ADE6-4745-84B6-54FF3DC7003B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66799AD0-ADE6-4745-84B6-54FF3DC7003B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

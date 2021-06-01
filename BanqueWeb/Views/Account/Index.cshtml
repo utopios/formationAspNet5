@@ -1,0 +1,10 @@
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Accueil Comptes bancaire</h1>
+@if (ViewBag.Message != null)
+{
+    <div class="row justify-content-center">
+        <div class="col-6 alert alert-success">@ViewBag.Message</div>
+    </div>
+}
+
