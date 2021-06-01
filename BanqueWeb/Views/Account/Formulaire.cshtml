@@ -1,4 +1,11 @@
-﻿<form asp-controller="Account" asp-action="SubmitAccount" method="post" class="container">
+﻿@if (ViewBag.Message != null)
+{
+    <div class="row justify-content-center">
+        <div class="col-6 alert alert-danger">@ViewBag.Message</div>
+    </div>
+}
+
+<form asp-controller="Account" asp-action="SubmitAccount" method="post" class="container">
     <div class="row justify-content-center m-1">
         <input type="text" name="FirstName" placeholder="Prénom du client" class="form-control col-6 p-1" />
     </div>
@@ -9,7 +16,7 @@
         <input type="text" name="Phone" placeholder="Téléphone du client" class="form-control col-6 p-1" />
     </div>
     <div class="row justify-content-center m-1">
-        <input type="text" name="amount" placeholder="Solde du compte" class="form-control col-6 p-1" />
+        <input type="text" name="Amount" placeholder="Solde du compte" class="form-control col-6 p-1" />
     </div>
     <div class="row justify-content-center m-1">
         <button type="submit" class="col-6 btn btn-primary p-1">Valider</button>

@@ -33,15 +33,17 @@ namespace BanqueWeb.Controllers
         {
             account.Customers.Add(customer);
             string message = "";
-            if(_accountRepository.Create(account))
+            if(account.Amount > 0 && _accountRepository.Create(account))
             {
                 message = "Compte ajouté, numéro : " + account.UniqNumber;
+                return RedirectToAction("Index", new { message = message });
             }
             else
             {
                 message = "Erreur d'ajout compte";
+                ViewBag.Message = message;
             }
-            return RedirectToAction("Index", new { message = message});
+            return View("Formulaire");
         }
     }
 }
