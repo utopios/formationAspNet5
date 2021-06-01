@@ -12,7 +12,9 @@
         <div>@d.FirstName</div>
         <div>@d.LastName</div>
     }*@
-    <ListPersonComponent Persons="Persons"></ListPersonComponent>
+    <ListPersonComponent Persons="Persons" SendPersonToEdit="GetPersonToEdit"></ListPersonComponent>
+
+    <div>@PersonToEdit</div>
     @*<span>@TestPerson</span>
     <div>@FirstName @LastName</div>*@
 </div>
@@ -22,6 +24,8 @@
     // public string TestPerson { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
+
+    public string PersonToEdit { get; set; }
     public List<Person> Persons { get; set; } = new List<Person>();
 
     public void ClickPerson()
@@ -30,5 +34,10 @@
         Persons.Add(new Person { FirstName = FirstName, LastName = LastName });
         FirstName = "";
         LastName = "";
+    }
+
+    public void GetPersonToEdit(string p)
+    {
+        PersonToEdit = p;
     }
 }

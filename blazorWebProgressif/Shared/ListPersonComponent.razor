@@ -3,10 +3,14 @@
 {
     <div>@d.FirstName</div>
     <div>@d.LastName</div>
+    <a @onclick ="() => SendPersonToEdit.InvokeAsync(d.FirstName)">Modifier</a>
 }
 @code {
 
     [Parameter]
     public List<Person> Persons { get; set; } = new List<Person>();
+
+    [Parameter]
+    public EventCallback<string> SendPersonToEdit { get; set; }
 
 }
