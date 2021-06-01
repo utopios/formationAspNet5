@@ -1,0 +1,18 @@
+﻿@using BanqueRepositoryClass.Models
+@model List<Operation>
+
+<div>
+    @foreach (Operation o in Model)
+    {
+        <div>
+            @o.Amount
+            Compte : @o.Account.UniqNumber
+
+            clients :
+            @foreach (Customer c in o.Account.Customers)
+            {
+                <div>@c.FirstName.</div>
+            }
+        </div>
+    }
+</div>

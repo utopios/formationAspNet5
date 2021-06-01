@@ -16,5 +16,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Extension\" />
+    <Folder Include="Views\Operation\" />
   </ItemGroup>
 </Project>

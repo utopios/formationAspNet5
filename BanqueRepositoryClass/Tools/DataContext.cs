@@ -15,5 +15,7 @@ namespace BanqueRepositoryClass.Tools
         public DbSet<Account> Accounts { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Operation> Operations { get; set; }
     }
 }

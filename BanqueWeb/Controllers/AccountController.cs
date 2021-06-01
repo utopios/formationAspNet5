@@ -74,7 +74,7 @@ namespace BanqueWeb.Controllers
             {
                 account.Operations.Add(operation);
                 account.Amount += operation.Amount;
-                _accountRepository.Update();
+                _accountRepository.Update(account);
                 message = "opération executé";
             }
             else

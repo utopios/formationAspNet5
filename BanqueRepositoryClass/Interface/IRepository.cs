@@ -8,6 +8,6 @@ namespace BanqueRepositoryClass.Interface
         bool Create(T element);
         T Find(int id);
         List<T> FindAll();
-        bool Update();
+        bool Update(T element);
     }
 }

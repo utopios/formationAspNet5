@@ -32,9 +32,11 @@ namespace BanqueRepositoryClass.Repositorties
             return _dataContext.Accounts.Include(e => e.Customers).Include(e => e.Operations).ToList();
         }
 
-        public override bool Update()
+        public bool Update(Account account)
         {
-            return base.Update();
+            _dataContext.Accounts.Update(account);
+            //A vérfier après la pause
+            return _dataContext.SaveChanges() > 0;
         }
     }
 }
