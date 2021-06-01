@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueRepositoryClass", "Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExempleBlazorServer", "ExempleBlazorServer\ExempleBlazorServer.csproj", "{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazorWebProgressif", "blazorWebProgressif\blazorWebProgressif.csproj", "{370453BF-44E0-46A7-8FB5-32C9BBCDF532}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

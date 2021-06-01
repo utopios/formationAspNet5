@@ -1,0 +1,22 @@
+﻿@page "/personne"
+
+<div>
+    <div>
+        <input type="text" @bind="LastName" class="form-control" placeholder="Votre nom" />
+        <input type="text" @bind="FirstName" class="form-control" placeholder="Votre prenom" />
+    </div>
+    <button class="btn btn-primary" @onclick="@ClickPerson">Ajouter une personne</button>
+    <span>@TestPerson</span>
+    <div>@FirstName @LastName</div>
+</div>
+
+@code {
+
+    public string TestPerson { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public void ClickPerson()
+    {
+        TestPerson = "toto";
+    }
+}
