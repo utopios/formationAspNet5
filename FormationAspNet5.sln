@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueWeb", "BanqueWeb\Banq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BanqueRepositoryClass", "BanqueRepositoryClass\BanqueRepositoryClass.csproj", "{3F3D0828-1E7E-430D-9D35-6910C82EA15C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExempleBlazorServer", "ExempleBlazorServer\ExempleBlazorServer.csproj", "{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F3D0828-1E7E-430D-9D35-6910C82EA15C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFC0824-A7EE-4122-BBC4-2F7B6FDA0B46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

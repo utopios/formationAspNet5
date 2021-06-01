@@ -1,0 +1,14 @@
+﻿@page "/FirstComponent"
+@using ExempleBlazorServer.Data
+@foreach(Person p in Persons)
+            {
+                <PersonComponent FirstName="@p.FirstName" LastName="@p.LastName"></PersonComponent>
+            }
+
+
+
+@code {
+    public List<Person> Persons { get; set; } = Person.GetPersons();
+}
+
+
