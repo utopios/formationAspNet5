@@ -17,5 +17,8 @@
     <Folder Include="Views\Account\" />
     <Folder Include="Extension\" />
     <Folder Include="Views\Operation\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\customer\" />
   </ItemGroup>
 </Project>

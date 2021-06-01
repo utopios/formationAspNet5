@@ -14,6 +14,7 @@ namespace BanqueWeb.Extension
             services.AddDbContext<DataContext>();
             services.AddScoped<IRepository<Account>, AccountRepository>();
             services.AddScoped<IRepository<Operation>, OperationRepository>();
+            services.AddScoped<IRepository<Customer>, CustomerRepository>();
         }
     }
 }

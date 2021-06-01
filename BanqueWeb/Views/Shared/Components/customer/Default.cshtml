@@ -1,0 +1,8 @@
+﻿@using BanqueRepositoryClass.Models
+<div>
+    <h1>SideBar Customers</h1>
+    @foreach (Customer c in Model)
+    {
+        <div>@c.FirstName</div>
+    }
+</div>

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using BanqueRepositoryClass.Interface
+@using BanqueRepositoryClass.Models 
+@inject IRepository<Customer> customerService 
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -30,6 +34,14 @@
         </nav>
     </header>
     <div class="container">
+        @*<div>
+            <h1>SideBar Customers</h1>
+            @foreach(Customer c in customerService.FindAll())
+            {
+                <div>@c.FirstName</div>
+            }
+        </div>*@
+        @await Component.InvokeAsync("customer") 
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
