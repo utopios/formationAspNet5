@@ -28,6 +28,7 @@ namespace BanqueRepositoryClass.Repositorties
         public List<Operation> FindAll()
         {
             Debug.WriteLine(_dataContext.Operations.Include(o => o.Account).ThenInclude(a => a.Customers).ToQueryString());
+            //_dataContext.Operations.FromSqlRaw("");
             return _dataContext.Operations.Include(o => o.Account).ThenInclude(a => a.Customers).ToList();
         }
 
