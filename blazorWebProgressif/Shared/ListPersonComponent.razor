@@ -1,0 +1,12 @@
+﻿<h3>Liste personnes</h3>
+@foreach (Person d in Persons)
+{
+    <div>@d.FirstName</div>
+    <div>@d.LastName</div>
+}
+@code {
+
+    [Parameter]
+    public List<Person> Persons { get; set; } = new List<Person>();
+
+}
