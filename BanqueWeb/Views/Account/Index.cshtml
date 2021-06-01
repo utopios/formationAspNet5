@@ -17,16 +17,15 @@
         Clients:
         @foreach (Customer c in a.Customers)
         {
-<div>@c.FirstName</div>
-        }
+<div>@c.FirstName</div>}
     </div>
     <div>
         Opérations:
         @foreach (Operation o in a.Operations)
         {
-<div>@o.Amount</div>
-        }
+<div>@o.Amount</div>}
     </div>
-    
+    <a asp-controller="Account" asp-action="FormOperation" asp-route-id="@a.Id" asp-route-type="depot">Depot</a>
+    <a asp-controller="Account" asp-action="FormOperation" asp-route-id="@a.Id" asp-route-type="retrait">Retrait</a>
 </div>
 }

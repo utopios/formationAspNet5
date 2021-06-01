@@ -1,0 +1,13 @@
+﻿@using BanqueRepositoryClass.Models;
+@model Account;
+
+<form asp-controller="Account" asp-action="SubmitOperation" method="post" class="container">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="hidden" name="type" value="@ViewBag.Type" />
+    <div class="row justify-content-center m-1">
+        <input type="text" name="Amount" placeholder="Montant opération" class="form-control col-6 p-1" />
+    </div>
+    <div class="row justify-content-center m-1">
+        <button type="submit" class="col-6 btn btn-primary p-1">Valider</button>
+    </div>
+</form>

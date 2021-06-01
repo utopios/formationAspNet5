@@ -24,12 +24,17 @@ namespace BanqueRepositoryClass.Repositorties
 
         public Account Find(int id)
         {
-            throw new NotImplementedException();
+            return _dataContext.Accounts.Include(e => e.Operations).FirstOrDefault( e => e.Id == id);
         }
 
         public List<Account> FindAll()
         {
             return _dataContext.Accounts.Include(e => e.Customers).Include(e => e.Operations).ToList();
+        }
+
+        public override bool Update()
+        {
+            return base.Update();
         }
     }
 }

@@ -45,5 +45,44 @@ namespace BanqueWeb.Controllers
             }
             return View("Formulaire");
         }
+
+
+        public IActionResult FormOperation(int id, string type)
+        {
+            Account account = _accountRepository.Find(id);
+            if(account != null)
+            {
+                ViewBag.type = type;
+                return View(account);
+            }
+            else
+            {
+                string message = "Aucun compte avec cet id";
+                return RedirectToAction("Index", new { message = message });
+            }
+        }
+
+        public IActionResult SubmitOperation(int id, string type, Operation operation)
+        {
+            Account account = _accountRepository.Find(id);
+            if(type == "retrait")
+            {
+                operation.Amount *= -1;
+            }
+            string message = "";
+            if(account != null)
+            {
+                account.Operations.Add(operation);
+                account.Amount += operation.Amount;
+                _accountRepository.Update();
+                message = "opération executé";
+            }
+            else
+            {
+                message = "Erreur compte";
+            }
+            return RedirectToAction("Index", new { message = message });
+
+        }
     }
 }

@@ -10,5 +10,10 @@ namespace BanqueRepositoryClass.Repositorties
         {
             _dataContext = dataContext;
         }
+
+        public virtual bool Update()
+        {
+            return _dataContext.SaveChanges() > 0;
+        }
     }
 }

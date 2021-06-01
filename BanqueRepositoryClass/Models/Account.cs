@@ -13,6 +13,7 @@ namespace BanqueRepositoryClass.Models
         public Account()
         {
             Customers = new List<Customer>();
+            Operations = new List<Operation>();
             uniqNumber = Guid.NewGuid().ToString();
         }
 
