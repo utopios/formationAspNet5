@@ -1,4 +1,5 @@
-﻿<div>
+﻿@inject HttpClient http
+<div>
 
     <input type="text" @bind="LastName" class="form-control" placeholder="Votre nom" />
     <input type="text" @bind="FirstName" class="form-control" placeholder="Votre prenom" />
@@ -11,9 +12,12 @@
     [Parameter]
     public EventCallback<Person> GetPerson { get; set; }
 
-    public void ClickPerson()
+    public async void ClickPerson()
     {
-        GetPerson.InvokeAsync(new Person() { FirstName = FirstName, LastName = LastName });
+        Person p = new Person() { FirstName = FirstName, LastName = LastName };
+        HttpResponseMessage response = await http.PostAsJsonAsync<Person>("/api/v1/person", p);
+        Person responsePerson = await response.Content.ReadFromJsonAsync<Person>();
+        await GetPerson.InvokeAsync(responsePerson);
         FirstName = "";
         LastName = "";
     }

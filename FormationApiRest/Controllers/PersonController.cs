@@ -31,7 +31,7 @@ namespace FormationApiRest.Controllers
         }
 
         [HttpPost]
-        [Authorize(Policy = "admin")]
+        //[Authorize(Policy = "admin")]
         public async Task<IActionResult> Post([FromBody] PersonRecord person)
         {
             return Ok(await Person.PostPersonAsync(person));
