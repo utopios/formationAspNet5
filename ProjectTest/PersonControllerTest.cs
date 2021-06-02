@@ -60,7 +60,7 @@ namespace ProjectTest
             LoginController l = new LoginController(o);
             l.Post(new UserRecord("login", "password"));
             //Assert.AreEqual(o.GenerateToken("login", "password"), "notretoken");
-            Mock.Verify(Mock.Get(o));
+            Mock.Verify(Mock.Get());
         }
     }
 }
