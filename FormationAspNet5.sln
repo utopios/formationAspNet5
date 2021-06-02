@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExempleBlazorServer", "Exem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazorWebProgressif", "blazorWebProgressif\blazorWebProgressif.csproj", "{370453BF-44E0-46A7-8FB5-32C9BBCDF532}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormationApiRest", "FormationApiRest\FormationApiRest.csproj", "{2B0787A7-9432-4B72-8E28-B662E7BA0D7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{370453BF-44E0-46A7-8FB5-32C9BBCDF532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B0787A7-9432-4B72-8E28-B662E7BA0D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B0787A7-9432-4B72-8E28-B662E7BA0D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B0787A7-9432-4B72-8E28-B662E7BA0D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B0787A7-9432-4B72-8E28-B662E7BA0D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
