@@ -35,6 +35,7 @@ namespace FormationApiRest
 
             services.AddControllers();
             services.AddScoped<ITokenGenerator, JwtLoginService>();
+            services.AddCors();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer((options) => {
 
                 options.SaveToken = true;
@@ -77,9 +78,12 @@ namespace FormationApiRest
             }
 
             app.UseHttpsRedirection();
-
+            
             app.UseRouting();
-
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            });
             app.UseAuthentication();
 
             app.UseAuthorization();

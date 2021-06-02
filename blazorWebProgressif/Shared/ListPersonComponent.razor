@@ -1,9 +1,10 @@
-﻿<h3>Liste personnes</h3>
+﻿@inject HttpClient http
+<h3>Liste personnes</h3>
 @foreach (Person d in Persons)
 {
     <div>@d.FirstName</div>
     <div>@d.LastName</div>
-    <a @onclick ="() => SendPersonToEdit.InvokeAsync(d.FirstName)">Modifier</a>
+    <a @onclick="() => SendPersonToEdit.InvokeAsync(d.FirstName)">Modifier</a>
 }
 @code {
 
@@ -12,5 +13,10 @@
 
     [Parameter]
     public EventCallback<string> SendPersonToEdit { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Persons = await http.GetFromJsonAsync<List<Person>>("/api/v1/person");
+    }
 
 }

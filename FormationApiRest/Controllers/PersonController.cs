@@ -14,7 +14,7 @@ namespace FormationApiRest.Controllers
     public class PersonController : ControllerBase
     {
         [HttpGet]
-        [Authorize(Policy = "public")]
+        //[Authorize(Policy = "public")]
         public async Task<IActionResult> Get()
         {
             //return await Task<List<Person>>.Run(() =>  new List<Person>() { new Person { FirstName = "toto", LastName = "tata" }, new Person { FirstName = "titi", LastName = "minet" } });
