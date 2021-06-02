@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FormationApiRest.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,7 @@ namespace FormationApiRest.Controllers
     public class PersonController : ControllerBase
     {
         [HttpGet]
+        [Authorize(Policy = "public")]
         public async Task<IActionResult> Get()
         {
             //return await Task<List<Person>>.Run(() =>  new List<Person>() { new Person { FirstName = "toto", LastName = "tata" }, new Person { FirstName = "titi", LastName = "minet" } });
@@ -29,6 +31,7 @@ namespace FormationApiRest.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "admin")]
         public async Task<IActionResult> Post([FromBody] PersonRecord person)
         {
             return Ok(await Person.PostPersonAsync(person));
